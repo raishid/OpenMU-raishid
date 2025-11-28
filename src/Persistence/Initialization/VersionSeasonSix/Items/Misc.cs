@@ -1,4 +1,4 @@
-﻿// <copyright file="Misc.cs" company="MUnique">
+// <copyright file="Misc.cs" company="MUnique">
 // Licensed under the MIT License. See LICENSE file in the project root for full license information.
 // </copyright>
 
@@ -29,6 +29,12 @@ public class Misc : InitializerBase
         this.CreateGoldenCherryBlossomBranch();
         this.CreateLostMap();
         this.CreateSymbolOfKundun();
+        this.CreateSilverKey();
+        this.CreateGoldKey();
+        this.CreateSealedSilverBox();
+        this.CreateSealedGoldenBox();
+        this.CreateSilverBox();
+        this.CreateGoldenBox();
     }
 
     private void CreateLostMap()
@@ -109,6 +115,84 @@ public class Misc : InitializerBase
         itemDefinition.Durability = 255;
         itemDefinition.Width = 1;
         itemDefinition.Height = 2;
+        itemDefinition.SetGuid(itemDefinition.Group, itemDefinition.Number);
+        this.GameConfiguration.Items.Add(itemDefinition);
+    }
+
+    private void CreateSilverKey()
+    {
+        var itemDefinition = this.Context.CreateNew<ItemDefinition>();
+        itemDefinition.Name = "Silver Key";
+        itemDefinition.Number = 112;
+        itemDefinition.Group = 14;
+        itemDefinition.Durability = 1;
+        itemDefinition.Width = 1;
+        itemDefinition.Height = 1;
+        itemDefinition.SetGuid(itemDefinition.Group, itemDefinition.Number);
+        this.GameConfiguration.Items.Add(itemDefinition);
+    }
+
+    private void CreateGoldKey()
+    {
+        var itemDefinition = this.Context.CreateNew<ItemDefinition>();
+        itemDefinition.Name = "Gold Key";
+        itemDefinition.Number = 113;
+        itemDefinition.Group = 14;
+        itemDefinition.Durability = 1;
+        itemDefinition.Width = 1;
+        itemDefinition.Height = 1;
+        itemDefinition.SetGuid(itemDefinition.Group, itemDefinition.Number);
+        this.GameConfiguration.Items.Add(itemDefinition);
+    }
+
+    private void CreateSealedSilverBox()
+    {
+        var itemDefinition = this.Context.CreateNew<ItemDefinition>();
+        itemDefinition.Name = "Sealed Silver Box";
+        itemDefinition.Number = 122;
+        itemDefinition.Group = 14;
+        itemDefinition.Durability = 1;
+        itemDefinition.Width = 1;
+        itemDefinition.Height = 1;
+        itemDefinition.SetGuid(itemDefinition.Group, itemDefinition.Number);
+        this.GameConfiguration.Items.Add(itemDefinition);
+    }
+
+    private void CreateSealedGoldenBox()
+    {
+        var itemDefinition = this.Context.CreateNew<ItemDefinition>();
+        itemDefinition.Name = "Sealed Golden Box";
+        itemDefinition.Number = 121;
+        itemDefinition.Group = 14;
+        itemDefinition.Durability = 1;
+        itemDefinition.Width = 1;
+        itemDefinition.Height = 1;
+        itemDefinition.SetGuid(itemDefinition.Group, itemDefinition.Number);
+        this.GameConfiguration.Items.Add(itemDefinition);
+    }
+
+    private void CreateSilverBox()
+    {
+        var itemDefinition = this.Context.CreateNew<ItemDefinition>();
+        itemDefinition.Name = "Silver Box";
+        itemDefinition.Number = 124;
+        itemDefinition.Group = 14;
+        itemDefinition.Durability = 1;
+        itemDefinition.Width = 1;
+        itemDefinition.Height = 1;
+        itemDefinition.SetGuid(itemDefinition.Group, itemDefinition.Number);
+        this.GameConfiguration.Items.Add(itemDefinition);
+    }
+
+    private void CreateGoldenBox()
+    {
+        var itemDefinition = this.Context.CreateNew<ItemDefinition>();
+        itemDefinition.Name = "Golden Box";
+        itemDefinition.Number = 123;
+        itemDefinition.Group = 14;
+        itemDefinition.Durability = 1;
+        itemDefinition.Width = 1;
+        itemDefinition.Height = 1;
         itemDefinition.SetGuid(itemDefinition.Group, itemDefinition.Number);
         this.GameConfiguration.Items.Add(itemDefinition);
     }
