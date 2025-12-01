@@ -9,6 +9,7 @@ services:
       - ./.htpasswd:/etc/nginx/.htpasswd
     depends_on:
       - openmu-startup
+    restart: unless-stopped
 
   openmu-startup:
     image: munique/openmu
