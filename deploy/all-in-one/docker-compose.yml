@@ -10,6 +10,8 @@ services:
     depends_on:
       - openmu-startup
     restart: unless-stopped
+    networks:
+      - mu-network
 
   openmu-startup:
     image: munique/openmu
@@ -33,6 +35,9 @@ services:
       - ./.htpasswd:/etc/nginx/.htpasswd
     depends_on:
       - database
+    restart: unless-stopped
+    networks:
+      - mu-network
 
   database:
     image: postgres
@@ -45,6 +50,13 @@ services:
       - "${POSTGRES_PORT}:5432"
     volumes:
       - dbdata:/var/lib/postgresql #store data on volume
+    restart: unless-stopped
+    networks:
+      - mu-network
 
 volumes:
   dbdata:
+
+networks:
+  mu-network:
+    driver: bridge
